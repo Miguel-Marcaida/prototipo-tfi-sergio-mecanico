@@ -1,0 +1,286 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    color: #333;
+    min-height: 100vh;
+}
+
+/* Header Azul (El de las capturas) */
+.header {
+    background-color: #1e3a8a;
+    color: white;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.header span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    color: #1e3a8a;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+/* Tarjetas de Perfil (index.html) */
+.roles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.role-card {
+    background-color: #e2e8f0;
+    border: 2px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 40px 20px;
+    text-decoration: none;
+    color: #1e3a8a;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    cursor: pointer;
+}
+
+.role-card:hover {
+    background-color: #cbd5e1;
+    border-color: #1e3a8a;
+    transform: translateY(-5px);
+}
+
+.role-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.role-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+/* Botones (Para las siguientes pantallas) */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.btn-primary { background-color: #2563eb; }
+.btn-primary:hover { background-color: #1d4ed8; }
+.btn-secondary { background-color: #64748b; }
+.btn-secondary:hover { background-color: #475569; }
+.btn-success { background-color: #059669; }
+.btn-warning { background-color: #d97706; }
+
+
+/* Estilos para las pantallas de formularios */
+.split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.panel {
+    background-color: #e2e8f0;
+    padding: 20px;
+    border-radius: 4px;
+    border: 1px solid #cbd5e1;
+}
+
+.panel h2 {
+    font-size: 1.1rem;
+    color: #1e3a8a;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #94a3b8;
+    border-radius: 4px;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+}
+
+.row .form-group {
+    flex: 1;
+}
+
+.actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+#mensaje {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Estilos para la lista de turnos */
+.turno-item {
+    background-color: #ffffff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-left: 4px solid #2563eb;
+    border-radius: 4px;
+}
+
+.turno-hora {
+    font-weight: bold;
+    color: #2563eb;
+}
+
+.turno-cliente {
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.turno-detalle {
+    font-size: 0.9rem;
+    color: #666;
+    margin-left: 10px;
+}
+
+
+/*recepcion*/
+/* --- Estilos para la pantalla de Entrega --- */
+.check-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.check-container input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    accent-color: #059669; /* Verde para cuando está tildado */
+}
+
+.check-container label {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Ocultar elementos al imprimir */
+@media print {
+    .no-print, .header, .actions {
+        display: none !important;
+    }
+    body {
+        background-color: white;
+    }
+    .container {
+        box-shadow: none;
+        padding: 0;
+    }
+}
+
+
+/* =========================================
+   DISEÑO RESPONSIVE (Para Tablets y Celulares)
+   ========================================= */
+
+/* Tablets y pantallas medianas (menos de 992px) */
+@media (max-width: 992px) {
+    .split-layout {
+        grid-template-columns: 1fr; /* Una sola columna en vez de dos */
+    }
+    
+    .roles-grid {
+        grid-template-columns: 1fr 1fr; /* Dos tarjetas por fila en vez de tres */
+    }
+}
+
+/* Celulares y pantallas chicas (menos de 768px) */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .header div {
+        display: flex;
+        gap: 15px;
+    }
+
+    .container {
+        padding: 0 15px;
+        margin: 20px auto;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    .roles-grid {
+        grid-template-columns: 1fr; /* Una tarjeta por fila */
+    }
+
+    /* Hacemos que las tablas se puedan deslizar horizontalmente si son muy anchas */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    /* Achicamos un poco las acciones */
+    .actions {
+        flex-direction: column;
+    }
+
+    .actions button {
+        width: 100%;
+    }
+}

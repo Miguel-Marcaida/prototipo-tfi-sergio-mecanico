@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración - Sergio Mecánico</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <span>🔧 Sergio Mecánico - Sistema de Gestión Integral Automotriz</span>
+        <a href="../../index.html" style="color: white; text-decoration: none; font-size: 0.9rem;">&larr; MENÚ GENERAL</a>
+    </header>
+
+    <div class="container">
+        <h1>ADMINISTRACIÓN</h1>
+        <p>Seleccione la acción que desea realizar:</p>
+
+        <!-- Tarjetas de Acción (solo Presupuestos y Facturación) -->
+        <div class="roles-grid" style="margin-top: 30px; grid-template-columns: 1fr 1fr;">
+            <a href="presupuesto.html" class="role-card">
+                <div class="role-icon">💵</div>
+                <div class="role-title">Gestionar Presupuestos</div>
+            </a>
+            <a href="factura.html" class="role-card">
+                <div class="role-icon">🧾</div>
+                <div class="role-title">Facturación y Cobro</div>
+            </a>
+        </div>
+
+        <!-- Grilla de Estado de los Vehículos -->
+        <div class="panel" style="margin-top: 30px;">
+            <h2>Estado de los Vehículos en el Taller</h2>
+            <p style="font-size: 0.9rem; color: #666; margin-bottom: 10px;">Consulta del avance de las reparaciones (solo lectura).</p>
+            <div id="grillaEstadoVehiculos"></div>
+        </div>
+    </div>
+
+    <script src="../../js/db.js"></script>
+    <script src="../../js/administracion-index.js"></script>
+</body>
+</html>

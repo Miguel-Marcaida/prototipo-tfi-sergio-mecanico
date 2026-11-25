@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Diagnóstico - Sergio Mecánico</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <span>🔧 Sergio Mecánico - Sistema de Gestión Integral Automotriz</span>
+        <a href="index.html" style="color: white; text-decoration: none; font-size: 0.9rem;">&larr; MENÚ MECÁNICO</a>
+    </header>
+
+    <div class="container">
+        <h1>REGISTRAR DIAGNÓSTICO TÉCNICO</h1>
+
+        <!-- Lista de Vehículos Pendientes -->
+        <div class="panel" style="margin-bottom: 20px;">
+            <h2>Vehículos Pendientes de Diagnóstico</h2>
+            <div id="listaVehiculosPendientes" style="margin-top: 10px;"></div>
+        </div>
+
+        <!-- Formulario de Diagnóstico (Oculto hasta seleccionar) -->
+        <form id="formDiagnostico" style="display: none;">
+            <div class="split-layout">
+                <!-- Columna Izquierda: Datos del Vehículo -->
+                <div>
+                    <div class="panel">
+                        <h2>Datos del Vehículo</h2>
+                        <p><strong>Patente:</strong> <span id="dispPatente"></span></p>
+                        <p><strong>Modelo:</strong> <span id="dispModelo"></span></p>
+                        <p><strong>Cliente:</strong> <span id="dispCliente"></span></p>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Diagnóstico -->
+                <div>
+                    <div class="panel">
+                        <h2>Diagnóstico Técnico</h2>
+                        <div class="form-group">
+                            <label>Descripción de la falla:</label>
+                            <textarea id="descripcion" rows="3" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Códigos de error (OBD-II):</label>
+                            <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                                <input type="text" id="codigoInput" placeholder="Ej: P0301" style="flex: 1;">
+                                <button type="button" class="btn btn-secondary" onclick="agregarCodigo()">Agregar</button>
+                            </div>
+                            <ul id="listaCodigos" style="padding-left: 20px; color: #1e3a8a; font-weight: bold; margin-top: 5px;"></ul>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Repuestos Necesarios:</label>
+                            <textarea id="repuestos" rows="3" placeholder="Ej: Bujías (x4), Filtro de aceite..." required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="actions">
+                        <button type="submit" class="btn btn-primary">CONFIRMAR DIAGNÓSTICO</button>
+                        <button type="button" class="btn btn-secondary" onclick="cancelarDiagnostico()">CANCELAR</button>
+                    </div>
+                    <div id="mensajeDiagnostico" style="margin-top: 15px; font-weight: bold;"></div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="../../js/db.js"></script>
+    <script src="../../js/diagnostico.js"></script>
+</body>
+</html>

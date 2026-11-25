@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mecánico - Sergio Mecánico</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <span>🔧 Sergio Mecánico - Sistema de Gestión Integral Automotriz</span>
+        <a href="../../index.html" style="color: white; text-decoration: none; font-size: 0.9rem;">&larr; MENÚ GENERAL</a>
+    </header>
+
+    <div class="container">
+        <h1>MECÁNICO</h1>
+        <p>Seleccione la acción que desea realizar:</p>
+
+        <!-- Tarjetas de Acción -->
+        <div class="roles-grid" style="margin-top: 20px; grid-template-columns: 1fr 1fr;">
+            <a href="diagnostico.html" class="role-card">
+                <div class="role-icon">🔍</div>
+                <div class="role-title">Registrar Diagnóstico</div>
+            </a>
+            <a href="orden.html" class="role-card">
+                <div class="role-icon">📋</div>
+                <div class="role-title">Actualizar Orden de Trabajo</div>
+            </a>
+        </div>
+
+        <!-- NUEVA GRILLA: Diagnósticos Pendientes de Aprobación -->
+        <div class="panel" style="margin-top: 30px;">
+            <h2>Diagnósticos Pendientes de Aprobación</h2>
+            <p style="font-size: 0.9rem; color: #666; margin-bottom: 10px;">Vehículos diagnosticados, esperando presupuesto del administrador.</p>
+            <div id="grillaDiagnosticos"></div>
+        </div>
+    </div>
+
+    <script src="../../js/db.js"></script>
+    <script src="../../js/mecanico-index.js"></script>
+</body>
+</html>

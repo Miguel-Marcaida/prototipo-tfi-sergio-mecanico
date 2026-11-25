@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recepción - Sergio Mecánico</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <span>🔧 Sergio Mecánico - Sistema de Gestión Integral Automotriz</span>
+        <a href="../../index.html" style="color: white; text-decoration: none; font-size: 0.9rem;">&larr; MENÚ GENERAL</a>
+    </header>
+
+    <div class="container">
+        <h1>RECEPCIÓN</h1>
+        <p>Seleccione la acción que desea realizar:</p>
+
+        <!-- Tarjetas de Acción -->
+        <div class="roles-grid" style="margin-top: 20px; grid-template-columns: 1fr 1fr;">
+            <a href="turno.html" class="role-card">
+                <div class="role-icon">📅</div>
+                <div class="role-title">Solicitar Turno</div>
+            </a>
+            <a href="vehiculo.html" class="role-card">
+                <div class="role-icon">🚗</div>
+                <div class="role-title">Registrar Vehículo</div>
+            </a>
+        </div>
+
+        <!-- Grilla de Turnos -->
+        <div class="panel" style="margin-top: 30px;">
+            <h2>Agenda de Turnos</h2>
+            <div class="form-group" style="margin-bottom: 15px; max-width: 300px;">
+                <label>Fecha a consultar:</label>
+                <input type="date" id="fechaGrilla" onchange="cargarGrillaTurnos()">
+            </div>
+            <div id="grillaTurnos"></div>
+        </div>
+
+        <!-- NUEVA GRILLA: Vehículos en el Taller -->
+        <div class="panel" style="margin-top: 30px;">
+            <h2>Vehículos en el Taller</h2>
+            <p style="font-size: 0.9rem; color: #666; margin-bottom: 10px;">Consulta de estado de los vehículos y acción de entrega.</p>
+            <div id="grillaVehiculos"></div>
+        </div>
+    </div>
+
+    <script src="../../js/db.js"></script>
+    <script src="../../js/recepcion.js"></script>
+</body>
+</html>

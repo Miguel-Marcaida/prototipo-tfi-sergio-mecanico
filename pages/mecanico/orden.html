@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orden de Trabajo - Sergio Mecánico</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <span>🔧 Sergio Mecánico - Sistema de Gestión Integral Automotriz</span>
+        <a href="index.html" style="color: white; text-decoration: none; font-size: 0.9rem;">&larr; MENÚ MECÁNICO</a>
+    </header>
+
+    <div class="container">
+        <h1>ACTUALIZAR ORDEN DE TRABAJO</h1>
+
+        <div class="panel">
+            <h2>Vehículos en Reparación</h2>
+            <div id="listaVehiculosReparacion" style="margin-top: 10px;"></div>
+        </div>
+
+        <!-- Formulario para actualizar (oculto hasta seleccionar) -->
+        <form id="formOrden" style="display: none; margin-top: 20px;">
+            <div class="panel">
+                <h2>Actualizar Estado: <span id="dispPatenteOT"></span></h2>
+                <div class="form-group">
+                    <label>Nuevo Estado:</label>
+                    <select id="nuevoEstado" required>
+                        <option value="En Reparación">En Reparación</option>
+                        <option value="En Espera de Repuestos">En Espera de Repuestos</option>
+                        <option value="Control de Calidad">Control de Calidad</option>
+                        <option value="Finalizado">Finalizado</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Observaciones:</label>
+                    <textarea id="observacionesOT" rows="3"></textarea>
+                </div>
+                <div class="actions">
+                    <button type="submit" class="btn btn-primary">ACTUALIZAR ESTADO</button>
+                    <button type="button" class="btn btn-secondary" onclick="document.getElementById('formOrden').style.display='none'">CANCELAR</button>
+                </div>
+                <div id="mensajeOT" style="margin-top: 15px; font-weight: bold;"></div>
+            </div>
+        </form>
+    </div>
+
+    <script src="../../js/db.js"></script>
+    <script src="../../js/orden.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entregar Vehículo - Sergio Mecánico</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <span>🔧 Sergio Mecánico - Sistema de Gestión Integral Automotriz</span>
+        <a href="index.html" style="color: white; text-decoration: none; font-size: 0.9rem;">&larr; MENÚ RECEPCIÓN</a>
+    </header>
+
+    <div class="container">
+        <h1>ENTREGAR VEHÍCULO</h1>
+
+        <div id="contenidoEntrega" style="display: none;">
+            <!-- Datos del Servicio -->
+            <div class="panel" style="margin-bottom: 20px;">
+                <h2>Datos del Servicio</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <p><strong>Patente:</strong> <span id="dispPatente"></span></p>
+                    <p><strong>Modelo:</strong> <span id="dispModelo"></span></p>
+                    <p><strong>Cliente:</strong> <span id="dispCliente"></span></p>
+                    <p><strong>Estado Actual:</strong> <span id="dispEstado" style="color: #059669; font-weight: bold;"></span></p>
+                </div>
+            </div>
+
+            <!-- Verificación Previa -->
+            <div class="panel" style="margin-bottom: 20px;">
+                <h2>Verificación Previa a la Entrega</h2>
+                <div class="check-container">
+                    <input type="checkbox" id="checkControl" disabled>
+                    <label for="checkControl">Control técnico aprobado</label>
+                </div>
+                <div class="check-container">
+                    <input type="checkbox" id="checkPago" disabled>
+                    <label for="checkPago">Pago registrado</label>
+                </div>
+                <div class="check-container">
+                    <input type="checkbox" id="checkComprobante" disabled>
+                    <label for="checkComprobante">Comprobante impreso y entregado</label>
+                </div>
+            </div>
+
+            <!-- Conformidad del Cliente (Mejorado) -->
+            <div class="panel" style="margin-bottom: 20px;">
+                <h2>Conformidad del Cliente</h2>
+                
+                <div class="form-group">
+                    <label>Tipo de recepción:</label>
+                    <select id="estadoConformidad" onchange="toggleObservaciones()">
+                        <option value="conforme">El cliente recibió el vehículo en conformidad</option>
+                        <option value="observaciones">El cliente recibió con observaciones</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="divObservaciones" style="display: none; margin-top: 15px;">
+                    <label>Detalle de las observaciones:</label>
+                    <textarea id="textoObservaciones" rows="3" placeholder="Ej: El cliente notó un rayón en la puerta..."></textarea>
+                </div>
+            </div>
+
+            <!-- Botones -->
+            <div class="actions">
+                <button type="button" class="btn btn-success" onclick="confirmarEntrega()">CONFIRMAR ENTREGA</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='index.html'">CANCELAR</button>
+            </div>
+            <div id="mensajeEntrega" style="margin-top: 15px; font-weight: bold;"></div>
+        </div>
+    </div>
+
+    <script src="../../js/db.js"></script>
+    <script src="../../js/entrega.js"></script>
+</body>
+</html>

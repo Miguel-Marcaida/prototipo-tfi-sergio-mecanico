@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sergio Mecánico - Menú Principal</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <span>🔧 Sergio Mecánico - Sistema de Gestión Integral Automotriz</span>
+    </header>
+
+    <div class="container">
+        <h1>MENÚ PRINCIPAL</h1>
+        <p>Seleccione el perfil con el que desea ingresar al sistema:</p>
+
+        <div class="roles-grid">
+            <!-- Perfil Recepción (Lleva al index de recepción) -->
+            <a href="pages/recepcion/index.html" class="role-card">
+                <div class="role-icon">💼</div>
+                <div class="role-title">Recepción</div>
+            </a>
+
+            <!-- Perfil Mecánico (Lleva al index de mecánico) -->
+            <a href="pages/mecanico/index.html" class="role-card">
+                <div class="role-icon">🔧</div>
+                <div class="role-title">Mecánico</div>
+            </a>
+
+            <!-- Perfil Administración (Lleva al index de administración) -->
+            <a href="pages/administracion/index.html" class="role-card">
+                <div class="role-icon">💰</div>
+                <div class="role-title">Administración</div>
+            </a>
+        </div>
+
+        <!-- NUEVOS BOTONES DE PRUEBA -->
+        <div style="margin-top: 40px; text-align: center; border-top: 1px solid #eee; padding-top: 20px;">
+            <p style="color: #666; font-size: 0.9rem; margin-bottom: 10px;">Opciones de prueba (para la defensa):</p>
+            <button class="btn btn-primary" style="margin-right: 10px;" onclick="cargarDatosDePrueba()">📦 Cargar Datos de Prueba</button>
+            <button class="btn btn-secondary" onclick="limpiarDatos()">🗑️ Limpiar Base de Datos</button>
+        </div>
+
+
+    </div>
+     <!-- Vinculamos el script de seed -->
+    <script src="js/seed.js"></script>
+</body>
+</html>

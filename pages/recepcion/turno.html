@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitar Turno - Sergio Mecánico</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <span>🔧 Sergio Mecánico - Sistema de Gestión Integral Automotriz</span>
+        <div>
+            <a href="index.html" style="color: white; text-decoration: none; font-size: 0.9rem; margin-right: 15px;">&larr; MENÚ RECEPCIÓN</a>
+            
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>SOLICITAR TURNO</h1>
+
+        <div class="split-layout">
+            <!-- Columna Izquierda: Formulario -->
+            <div class="panel">
+                <h2>Nuevo Turno</h2>
+                <form id="formTurno">
+                    <div class="form-group">
+                        <label>Cliente:</label>
+                        <input type="text" id="cliente" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Teléfono:</label>
+                        <input type="text" id="telefono" required>
+                    </div>
+                    <div class="form-group">
+                        <label>DNI:</label>
+                        <input type="text" id="dni" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Patente:</label>
+                        <input type="text" id="patente" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Modelo:</label>
+                        <input type="text" id="modelo" required>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <label>Fecha:</label>
+                            <input type="date" id="fecha" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Hora:</label>
+                            <input type="time" id="hora" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Motivo:</label>
+                        <input type="text" id="motivo" required>
+                    </div>
+
+                    <div class="actions">
+                        <button type="submit" class="btn btn-primary">GUARDAR TURNO</button>
+                        <button type="button" class="btn btn-secondary" onclick="window.location.href='index.html'">CANCELAR</button>
+                    </div>
+                    <div id="mensaje"></div>
+                </form>
+            </div>
+
+            <!-- Columna Derecha: Lista de Turnos -->
+            <div class="panel">
+                <h2>Turnos Agendados</h2>
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label>Fecha a consultar:</label>
+                    <input type="date" id="fechaConsulta" onchange="renderizarTurnos()">
+                </div>
+                <div id="listaTurnos"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../js/db.js"></script>
+    <script src="../../js/turnos.js"></script>
+</body>
+</html>

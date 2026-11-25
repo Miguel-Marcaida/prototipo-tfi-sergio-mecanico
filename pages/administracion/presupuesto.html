@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presupuestos - Sergio Mecánico</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <span>🔧 Sergio Mecánico - Sistema de Gestión Integral Automotriz</span>
+        <a href="index.html" style="color: white; text-decoration: none; font-size: 0.9rem;">&larr; MENÚ ADMINISTRACIÓN</a>
+    </header>
+
+    <div class="container">
+        <h1>GESTIÓN DE PRESUPUESTOS</h1>
+
+        <!-- Lista de Vehículos Diagnosticados -->
+        <div class="panel" style="margin-bottom: 20px;">
+            <h2>Vehículos Pendientes de Presupuesto</h2>
+            <div id="listaVehiculosPresupuesto" style="margin-top: 10px;"></div>
+        </div>
+
+        <!-- Formulario de Presupuesto (Oculto hasta seleccionar) -->
+        <form id="formPresupuesto" style="display: none;">
+            <div class="split-layout">
+                <!-- Columna Izquierda: Diagnóstico del Mecánico -->
+                <div>
+                    <div class="panel">
+                        <h2>Diagnóstico del Mecánico</h2>
+                        <p><strong>Patente:</strong> <span id="dispPatente"></span></p>
+                        <p><strong>Modelo:</strong> <span id="dispModelo"></span></p>
+                        <p><strong>Cliente:</strong> <span id="dispCliente"></span></p>
+                        <hr style="margin: 10px 0;">
+                        <p><strong>Descripción:</strong> <span id="dispDiagnostico"></span></p>
+                        <p><strong>Códigos:</strong> <span id="dispCodigos" style="color: #1e3a8a; font-weight: bold;"></span></p>
+                        <p><strong>Repuestos:</strong> <span id="dispRepuestos"></span></p>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Presupuesto -->
+                <div>
+                    <div class="panel">
+                        <h2>Presupuesto</h2>
+                        <div class="form-group">
+                            <label>Mano de Obra ($):</label>
+                            <input type="number" id="manoObra" value="15000" required>
+                        </div>
+                        <hr>
+                        <p style="font-weight: bold; font-size: 1.2rem; text-align: right;">Total: $<span id="dispTotal">15000</span></p>
+                        <p style="font-size: 0.8rem; color: #666;">Validez: 7 días corridos</p>
+                    </div>
+
+                    <div class="actions">
+                        <button type="button" class="btn btn-primary" id="btnGenerar" onclick="generarPresupuesto()">GENERAR PRESUPUESTO</button>
+                        <button type="button" class="btn btn-success" id="btnAprobar" style="display: none;" onclick="aprobarPresupuesto()">APROBAR PRESUPUESTO</button>
+                        <button type="button" class="btn btn-secondary" onclick="cancelarPresupuesto()">CANCELAR</button>
+                    </div>
+                    <div id="mensajePresupuesto" style="margin-top: 15px; font-weight: bold;"></div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="../../js/db.js"></script>
+    <script src="../../js/presupuesto.js"></script>
+</body>
+</html>
